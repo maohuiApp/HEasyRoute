@@ -1,6 +1,9 @@
 # HEasyRoute
 一个用于帮助组件化解耦的轻量框架
 
+## 说明
+是否会觉得ARouter太过繁杂，功能太多，HEasyRoute便是将ARouter中大部分功能剔除，只留下了Activity的页面跳转的一个库
+
 ## 导入
 如下添加依赖到各模块的build.gradle:
 
