@@ -54,9 +54,11 @@ public class EasyRoute {
     }
 
     public static void navigation(Context context, String path) {
-        Intent intent = new Intent();
         RouteEntity entity = sActivities.get(path);
-        intent.setComponent(new ComponentName(context, entity.getClassName()));
-        context.startActivity(intent);
+        if (entity != null) {
+            Intent intent = new Intent();
+            intent.setComponent(new ComponentName(context, entity.getClassName()));
+            context.startActivity(intent);
+        }
     }
 }
