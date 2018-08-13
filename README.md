@@ -25,11 +25,13 @@ android {
 }
 ```
 
-3、混淆配置
+## 关于混淆
+```
 -keepnames class * {
     @com.moly.hooyee.annocation.Route <fields>;
 }
 -keep public class com.moly.hooyee.model.**{*;}
+```
 
 ## 简单使用
 1. 在Application#onCreate()中调用EasyRoute.init(this);
