@@ -11,7 +11,7 @@ dependencies {
   compile 'com.hooyee:easyroute-lib:1.0.1'
 }
 
-2、添加区分个模块的参数
+2、添加区分各模块的参数
 android {
 ...
        javaCompileOptions {
@@ -24,7 +24,6 @@ android {
 ```
 
 ## 简单使用
-#### Define your PraiseView under your xml  :
 1. 在Application#onCreate()中调用EasyRoute.init(this);
 
 2. 在需要路由配置的Activity的类定义上加上注解：@Route(path = "/test")
