@@ -12,6 +12,6 @@ import com.moly.hooyee.model.RouteIntercept;
 public class LoginIntercept implements RouteIntercept {
     @Override
     public boolean intercept() {
-        return false;
+        return true;
     }
 }
