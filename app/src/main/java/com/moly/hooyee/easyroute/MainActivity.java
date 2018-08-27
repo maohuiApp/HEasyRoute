@@ -7,7 +7,7 @@ import android.view.View;
 import com.moly.hooyee.annocation.Route;
 import com.moly.hooyee.route.api.EasyRoute;
 
-@Route(path = "test", intercept = {DefaultIntercept.class, LoginIntercept.class})
+@Route(path = "test", intercept = {LoginIntercept.class})
 public class MainActivity extends AppCompatActivity {
 
     @Override
