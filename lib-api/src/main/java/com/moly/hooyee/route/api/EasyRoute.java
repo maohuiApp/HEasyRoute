@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 
 import com.moly.hooyee.model.RouteEntity;
+import com.moly.hooyee.model.RouteIntercept;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -55,8 +56,8 @@ public class EasyRoute {
     public static void navigation(Context context, String path) {
         RouteEntity entity = sActivities.get(path);
         if (entity != null) {
-            if (entity.getIntercept() != null) {
-                boolean needIntercept = entity.getIntercept().intercept();
+            for (RouteIntercept intercept : entity.getIntercept()) {
+                boolean needIntercept = intercept.intercept();
                 if (needIntercept) return;
             }
             Intent intent = new Intent();

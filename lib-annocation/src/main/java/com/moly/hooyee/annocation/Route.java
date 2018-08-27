@@ -1,6 +1,5 @@
 package com.moly.hooyee.annocation;
 
-import com.moly.hooyee.model.DefaultIntercept;
 import com.moly.hooyee.model.RouteIntercept;
 
 import java.lang.annotation.ElementType;
@@ -13,5 +12,5 @@ import java.lang.annotation.Target;
 public @interface Route {
     String module() default "";
     String path();
-    Class<? extends RouteIntercept> intercept() default DefaultIntercept.class;
+    Class<? extends RouteIntercept>[] intercept() default {};
 }

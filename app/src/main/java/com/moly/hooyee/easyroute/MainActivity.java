@@ -7,7 +7,7 @@ import android.view.View;
 import com.moly.hooyee.annocation.Route;
 import com.moly.hooyee.route.api.EasyRoute;
 
-@Route(module = "", path = "test")
+@Route(path = "test", intercept = {DefaultIntercept.class, LoginIntercept.class})
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EasyRoute.navigation(getApplicationContext(), "moudle2/t2");
+            }
+        });
+
+        findViewById(R.id.btn_test3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EasyRoute.navigation(getApplicationContext(), "/intercept/t1");
             }
         });
     }

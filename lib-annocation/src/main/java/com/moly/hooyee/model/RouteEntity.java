@@ -1,5 +1,8 @@
 package com.moly.hooyee.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Hooyee on 2018/7/14.
  * mail: hooyee_moly@foxmail.com
@@ -9,20 +12,13 @@ public class RouteEntity {
     private String className;
     private String path;
     private String moudle;   // 暂未使用
-    private RouteIntercept intercept;
-    private String interceptName;
+    private List<RouteIntercept> intercept;
+    private List<String> interceptName;
 
-    public RouteEntity(String className, String path, String interceptName, RouteIntercept intercept) {
+    public RouteEntity(String className, String path, List<RouteIntercept> intercept) {
         this.className = className;
         this.path = path;
-        this.interceptName = interceptName;
         this.intercept = intercept;
-    }
-
-    public RouteEntity(String className, String path, String interceptName) {
-        this.className = className;
-        this.path = path;
-        this.interceptName = interceptName;
     }
 
     public RouteEntity(String className, String path) {
@@ -47,27 +43,27 @@ public class RouteEntity {
         return moudle;
     }
 
-    public RouteIntercept getIntercept() {
+    public List<RouteIntercept> getIntercept() {
         return intercept;
     }
 
-    public void setIntercept(RouteIntercept intercept) {
+    public void setIntercept(List<RouteIntercept> intercept) {
         this.intercept = intercept;
     }
 
-    public String getInterceptName() {
-        return null == interceptName ? "" : interceptName;
+    public List<String> getInterceptName() {
+        return null == interceptName ? new ArrayList<String>() : interceptName;
     }
 
-    public void setInterceptName(String interceptName) {
+    public void setInterceptName(List<String> interceptName) {
         this.interceptName = interceptName;
     }
 
-    public static RouteEntity build(String className, String path, String moudle, String interceptName, RouteIntercept intercept) {
-        return new RouteEntity(className, path, interceptName, intercept);
+    public static RouteEntity build(String className, String path, List<RouteIntercept> intercept) {
+        return new RouteEntity(className, path, intercept);
     }
 
-    public static RouteEntity build(String className, String path, String moudle) {
+    public static RouteEntity build(String className, String path) {
         return new RouteEntity(className, path);
     }
 }
