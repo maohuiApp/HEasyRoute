@@ -55,6 +55,8 @@ public class EasyRoute {
     public static void navigation(Context context, String path) {
         RouteEntity entity = sActivities.get(path);
         if (entity != null) {
+            boolean needIntercept = entity.getIntercept().intercept();
+            if (needIntercept) return;
             Intent intent = new Intent();
             intent.setComponent(new ComponentName(context, entity.getClassName()));
             context.startActivity(intent);

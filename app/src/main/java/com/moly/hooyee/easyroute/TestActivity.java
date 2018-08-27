@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.moly.hooyee.annocation.Route;
 
-@Route(path = "/test/a1")
+@Route(path = "/test/a1", intercept = LoginIntercept.class)
 public class TestActivity extends AppCompatActivity {
 
     @Override
