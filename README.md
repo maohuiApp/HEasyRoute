@@ -10,8 +10,8 @@
 ```gradle
 1、添加依赖
 dependencies {
-  annotationProcessor 'com.hooyee:easyroute-compile:1.0.1'
-  compile 'com.hooyee:easyroute-lib:1.0.1'
+  annotationProcessor 'com.hooyee:easyroute-compile:1.0.2'
+  compile 'com.hooyee:easyroute-lib:1.0.2'
 }
 
 2、添加区分各模块的参数
@@ -41,7 +41,9 @@ android {
 
 2. 在需要路由配置的Activity的类定义上加上注解：@Route(path = "/test")
 
-3. 在需要跳转到路由所标注的Activity的地方调用：EasyRoute.navigation(context, "/test");
+4. 在需要进行拦截处理的Activity类定义上作如下处理：@Route(path = "/test", intercept = {RouteIntercept.class})
+
+4. 在需要跳转到路由所标注的Activity的地方调用：EasyRoute.navigation(context, "/test");
 
 完成以上三步即可跳转到指定的Activity,跨模块调用同样可行
 
