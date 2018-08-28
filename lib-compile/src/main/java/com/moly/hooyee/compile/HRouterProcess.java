@@ -75,7 +75,7 @@ public class HRouterProcess extends AbstractProcessor {
                 String packageName = name.substring(0, index);
                 String className = name.substring(index + 1, name.length());
                 ClassName clazz = ClassName.get(packageName, className);
-                registerBuild.addStatement("intercepts.add(new $T());", clazz);
+                registerBuild.addStatement("intercepts.add(new $T())", clazz);
             }
 
             registerBuild.addStatement("map.put($S, $T.build($S, $S, intercepts))",
