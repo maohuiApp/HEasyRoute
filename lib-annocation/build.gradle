@@ -1,8 +1,19 @@
 apply plugin: 'java-library'
+apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+publish {
+    userOrg = 'maohui'      //bintray注册的用户名
+    groupId = 'com.hooyee'         //compile引用时的第1部分groupId
+    artifactId = 'easyroute-annocation'     //compile引用时的第2部分项目名
+    publishVersion = '1.0.3'    //compile引用时的第3部分版本号
+    desc = 'This is a simple lib for Android route '
+    website = 'https://github.com/maohuiApp/HEasyRoute.git'
+}
+
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"

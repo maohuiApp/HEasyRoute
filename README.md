@@ -10,8 +10,8 @@
 ```gradle
 1、添加依赖
 dependencies {
-  annotationProcessor 'com.hooyee:easyroute-compile:1.0.2'
-  compile 'com.hooyee:easyroute-lib:1.0.2'
+  annotationProcessor 'com.hooyee:easyroute-compile:1.0.3'
+  compile 'com.hooyee:easyroute-lib:1.0.3'
 }
 
 2、添加区分各模块的参数
